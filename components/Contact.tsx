@@ -58,28 +58,28 @@ Best regards,
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto p-8 sm:p-12 md:p-16 rounded-3xl bg-surface-900/70 border border-white/10 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8)]"
+          className="max-w-3xl mx-auto p-5 sm:p-12 md:p-16 rounded-3xl bg-surface-900/70 border border-white/10 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.8)]"
         >
           {/* Email Address Highlight Bar */}
-          <div className="inline-flex flex-wrap items-center justify-center gap-3 p-2.5 sm:p-3 rounded-full bg-navy-950/90 border border-white/10 mb-10 max-w-full">
-            <Mail className="w-4 h-4 text-electric-400 ml-2" />
-            <span className="font-mono text-sm sm:text-base text-white tracking-wider truncate">
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-full bg-navy-950/90 border border-white/10 mb-8 sm:mb-10 max-w-full">
+            <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-electric-400 ml-1 sm:ml-2" />
+            <span className="font-mono text-xs sm:text-base text-white tracking-wider truncate max-w-[200px] sm:max-w-none">
               {email}
             </span>
             <button
               onClick={handleCopyEmail}
               type="button"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-mono text-slate-200 transition-colors"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-[11px] sm:text-xs font-mono text-slate-200 transition-colors"
               title="Copy email to clipboard"
             >
               {copied ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400" />
                   <span className="text-emerald-400">Copied</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5" />
+                  <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   <span>Copy</span>
                 </>
               )}
@@ -87,12 +87,12 @@ Best regards,
           </div>
 
           {/* Action Magnetic Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 w-full">
             <MagneticButton
               href={gmailUrl}
               target="_blank"
               variant="primary"
-              className="px-7 py-4 text-sm font-semibold tracking-wider"
+              className="w-full sm:w-auto px-7 py-3.5 sm:py-4 text-sm font-semibold tracking-wider"
               icon={<ArrowUpRight className="w-4 h-4" />}
               title="Open pre-filled draft in Gmail"
             >
@@ -103,7 +103,7 @@ Best regards,
               href={github}
               target="_blank"
               variant="outline"
-              className="px-7 py-4 text-sm font-semibold tracking-wider"
+              className="w-full sm:w-auto px-7 py-3.5 sm:py-4 text-sm font-semibold tracking-wider"
               icon={<Github className="w-4 h-4" />}
               title="Visit GitHub profile"
             >
@@ -114,7 +114,7 @@ Best regards,
               href={linkedin}
               target="_blank"
               variant="outline"
-              className="px-7 py-4 text-sm font-semibold tracking-wider border-warm-500/30 hover:border-warm-400"
+              className="w-full sm:w-auto px-7 py-3.5 sm:py-4 text-sm font-semibold tracking-wider border-warm-500/30 hover:border-warm-400"
               icon={<Linkedin className="w-4 h-4 text-warm-400" />}
               title="Connect on LinkedIn"
             >

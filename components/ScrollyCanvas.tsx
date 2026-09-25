@@ -75,19 +75,30 @@ export default function ScrollyCanvas({ onLoaded }: ScrollyCanvasProps) {
     ctx.fillRect(0, 0, width, height);
   }, []);
 
-  // Update canvas dimensions on resize
+  const lastWidthRef = useRef<number>(0);
+  const lastHeightRef = useRef<number>(0);
+
+  // Update canvas dimensions on resize (stabilized for mobile address bar collapse)
   const handleResize = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const displayWidth = window.innerWidth;
     const displayHeight = window.innerHeight;
 
-    canvas.width = displayWidth * dpr;
-    canvas.height = displayHeight * dpr;
-    canvas.style.width = `${displayWidth}px`;
-    canvas.style.height = `${displayHeight}px`;
+    const widthChanged = Math.abs(displayWidth - lastWidthRef.current) > 2;
+    const heightChanged = Math.abs(displayHeight - lastHeightRef.current) > 100;
+
+    if (widthChanged || heightChanged || canvas.width === 0) {
+      lastWidthRef.current = displayWidth;
+      lastHeightRef.current = displayHeight;
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = displayWidth * dpr;
+      canvas.height = displayHeight * dpr;
+      canvas.style.width = `${displayWidth}px`;
+      canvas.style.height = `${displayHeight}px`;
+    }
 
     renderFrame(currentFrameRef.current);
   }, [renderFrame]);
@@ -171,7 +182,7 @@ export default function ScrollyCanvas({ onLoaded }: ScrollyCanvasProps) {
       id="hero-scroll-container"
     >
       {/* Sticky Canvas Viewport */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div className="sticky top-0 h-screen h-[100dvh] w-full overflow-hidden">
         {/* Preloader if sequence is downloading */}
         {!isReady && (
           <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#080c16] text-white">

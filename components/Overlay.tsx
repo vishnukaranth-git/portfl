@@ -51,31 +51,31 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
   const y5 = useTransform(scrollYProgress, [0.84, 0.89, 1], [40, 0, -20]);
 
   return (
-    <div className="absolute inset-0 z-10 pointer-events-none flex flex-col justify-center items-center px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+    <div className="absolute inset-0 z-10 pointer-events-none flex flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
       {/* 0% - 15%: HERO TITLE */}
       <motion.div
         style={{ opacity: opacity1, y: y1, scale: scale1, filter: filter1 }}
-        className="absolute flex flex-col items-center text-center max-w-4xl"
+        className="absolute flex flex-col items-center text-center max-w-4xl px-2"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-electric-400/30 bg-navy-900/60 backdrop-blur-md mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-electric-400/30 bg-navy-900/60 backdrop-blur-md mb-4 sm:mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-electric-400 animate-pulse" />
-          <span className="font-mono text-xs tracking-[0.28em] text-electric-300 font-medium uppercase">
+          <span className="font-mono text-[10px] sm:text-xs tracking-[0.28em] text-electric-300 font-medium uppercase">
             VISHNU KARANTH
           </span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.08] font-display text-white mb-6">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] font-display text-white mb-4 sm:mb-6">
           <span className="block text-gradient-electric">AI/ML STUDENT.</span>
           <span className="block text-white">FULL STACK DEVELOPER.</span>
           <span className="block text-gradient-warm">BUILDER.</span>
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl font-light leading-relaxed mb-8">
+        <p className="text-sm sm:text-base md:text-xl text-slate-300 max-w-2xl font-light leading-relaxed mb-6 sm:mb-8">
           I build intelligent digital experiences at the intersection of AI,
           software, and emerging technology.
         </p>
 
-        <div className="flex items-center gap-3 font-mono text-xs text-slate-400 tracking-wider">
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 font-mono text-[11px] sm:text-xs text-slate-400 tracking-wider">
           <span className="px-2.5 py-1 rounded border border-white/10 bg-white/5">
             AI / ML
           </span>
@@ -93,15 +93,15 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
       {/* 18% - 35%: LEFT ALIGNED */}
       <motion.div
         style={{ opacity: opacity2, y: y2 }}
-        className="absolute left-6 md:left-16 max-w-xl text-left"
+        className="absolute left-4 sm:left-6 md:left-16 max-w-[calc(100vw-2rem)] sm:max-w-xl text-left"
       >
-        <span className="font-mono text-xs tracking-[0.25em] text-electric-400 uppercase block mb-3">
+        <span className="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-electric-400 uppercase block mb-2 sm:mb-3">
           ENGINEERING & INTELLIGENCE
         </span>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-white tracking-tight leading-tight mb-4">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display text-white tracking-tight leading-tight mb-3 sm:mb-4">
           I build digital experiences.
         </h2>
-        <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-slate-300 font-light leading-relaxed">
           From AI-powered products to full-stack applications, I turn ideas into
           real-world solutions.
         </p>
@@ -110,34 +110,34 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
       {/* 39% - 58%: CENTER ACCENT */}
       <motion.div
         style={{ opacity: opacity3, y: y3 }}
-        className="absolute text-center max-w-2xl"
+        className="absolute text-center max-w-[calc(100vw-2rem)] sm:max-w-2xl px-2"
       >
-        <span className="font-mono text-xs tracking-[0.25em] text-warm-400 uppercase block mb-3">
+        <span className="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-warm-400 uppercase block mb-2 sm:mb-3">
           CORE PHILOSOPHY
         </span>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display tracking-tight text-white mb-4">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white mb-3 sm:mb-4">
           <span className="text-gradient-electric">AI.</span>{" "}
           <span className="text-white">Software.</span>{" "}
           <span className="text-gradient-warm">Ideas.</span>
         </h2>
-        <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-slate-300 font-light leading-relaxed">
           Creating autonomous multi-agent systems, responsive full-stack
           interfaces, and applied intelligence that solves concrete problems.
         </p>
       </motion.div>
 
-      {/* 62% - 80%: RIGHT ALIGNED */}
+      {/* 62% - 80%: RIGHT ALIGNED (Adaptive on mobile) */}
       <motion.div
         style={{ opacity: opacity4, y: y4 }}
-        className="absolute right-6 md:right-16 max-w-xl text-right"
+        className="absolute right-4 sm:right-6 md:right-16 max-w-[calc(100vw-2rem)] sm:max-w-xl text-left sm:text-right"
       >
-        <span className="font-mono text-xs tracking-[0.25em] text-electric-400 uppercase block mb-3">
+        <span className="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-electric-400 uppercase block mb-2 sm:mb-3">
           SYSTEM DESIGN
         </span>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-white tracking-tight leading-tight mb-4">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display text-white tracking-tight leading-tight mb-3 sm:mb-4">
           Bridging AI, design and engineering.
         </h2>
-        <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed ml-auto">
+        <p className="text-sm sm:text-base md:text-lg text-slate-300 font-light leading-relaxed ml-0 sm:ml-auto">
           Exploring artificial intelligence, generative AI, agentic systems,
           software development and emerging technologies.
         </p>
@@ -146,15 +146,15 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
       {/* 84% - 100%: FINAL SCROLL MESSAGE */}
       <motion.div
         style={{ opacity: opacity5, y: y5 }}
-        className="absolute text-center max-w-2xl"
+        className="absolute text-center max-w-[calc(100vw-2rem)] sm:max-w-2xl px-2"
       >
-        <span className="font-mono text-xs tracking-[0.25em] text-slate-400 uppercase block mb-3">
+        <span className="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-slate-400 uppercase block mb-2 sm:mb-3">
           HORIZON
         </span>
-        <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold font-display text-white tracking-tight mb-4">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display text-white tracking-tight mb-3 sm:mb-4">
           Let&apos;s build what comes next.
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 font-mono tracking-wider">
+        <p className="text-xs sm:text-base text-slate-400 font-mono tracking-wider">
           Explore portfolio & engineering archives ↓
         </p>
       </motion.div>

@@ -100,9 +100,24 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-30 bg-[#080c16]/95 backdrop-blur-2xl lg:hidden flex flex-col pt-28 px-8 pb-12"
+            className="fixed inset-0 z-50 bg-[#080c16]/98 backdrop-blur-2xl lg:hidden flex flex-col pt-6 px-6 pb-10 overflow-y-auto"
           >
-            <div className="flex flex-col gap-6 my-auto">
+            {/* Mobile Header Bar */}
+            <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+              <span className="font-display font-bold tracking-[0.2em] text-sm text-white">
+                VISHNU KARANTH
+              </span>
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="flex flex-col gap-5 my-auto py-4">
               {NAV_ITEMS.map((item, idx) => (
                 <motion.a
                   key={item.label}
@@ -119,7 +134,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div className="mt-auto pt-6 border-t border-white/10 flex flex-col gap-3">
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}

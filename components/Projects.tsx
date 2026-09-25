@@ -185,7 +185,7 @@ export default function Projects() {
                   } opacity-40 group-hover:opacity-100 transition-opacity duration-300`}
                 />
 
-                <div className="p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div className="p-5 sm:p-10 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                   {/* Left Column: Details */}
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
@@ -227,10 +227,10 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 group/link mb-2"
                       >
-                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight group-hover/link:text-electric-300 transition-colors">
+                        <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight group-hover/link:text-electric-300 transition-colors">
                           {proj.title}
                         </h3>
-                        <ArrowUpRight className="w-6 h-6 text-slate-500 group-hover/link:text-electric-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-all duration-300" />
+                        <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 text-slate-500 group-hover/link:text-electric-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-all duration-300" />
                       </a>
 
                       {/* Subtitle */}

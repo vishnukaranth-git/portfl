@@ -10,7 +10,10 @@ export default function CustomCursor() {
 
   useEffect(() => {
     // Only enable on desktop pointer devices
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    const isTouch =
+      window.matchMedia("(pointer: coarse)").matches ||
+      "ontouchstart" in window ||
+      (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0);
     if (isTouch) return;
 
     const handleMouseMove = (e: MouseEvent) => {
